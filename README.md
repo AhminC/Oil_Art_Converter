@@ -6,9 +6,14 @@ The objective of this project is to derive an “oil painting” like output giv
 
 # How it works
 1. Save any photo(s) and esure the image file format is .PNG, .JEPG, or BMP
+![graph](Images/ReadMe/SetUp_1.png)
 2. Press “Upload Image” button
+![graph](Images/ReadMe/SetUp_2.png)
 3. A file directory will show up indicating which file you would like to upload, press "open" when you have found the image to upload
+![graph](Images/ReadMe/SetUp_3.png)
 4. If the file you have uploaded is not the desired file, press “Clear Image” and repeat steps 2-3
+![graph](Images/ReadMe/SetUp_4.png)
 5. Once the image is uploaded, use the scroll bars “Brush Size”, “Intensity”, and “Quant Levels” to manipulate the three categories
+![graph](Images/ReadMe/SetUp_5.png)
 6. After deciding values from the scroll bars, click “Oil Painting” and watch the magic happen
 7. If you decide to upload a new file, restart and complete step 2-6
