@@ -15,6 +15,6 @@ The objective of this project is to derive an “oil painting” like output giv
 ![graph](Images/ReadMe/SetUp_4.png)
 5. Once the image is uploaded, use the scroll bars “Brush Size”, “Intensity”, and “Quant Levels” to manipulate the three categories
 ![graph](Images/ReadMe/SetUp_5.png)
-6. After deciding values from the scroll bars, click “Oil Painting” and watch the magic happen
+6. After deciding values from the scroll bars, click “Apply Oil Painting” and watch the magic happen
 ![graph](Images/ReadMe/SetUp_6.png)
 7. If you decide to upload a new file, restart and complete step 2-6
