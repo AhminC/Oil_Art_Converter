@@ -4,7 +4,7 @@ The goal of this project was to showcase my ability to identify, formulate, and 
 # Objective 
 The objective of this project is to derive an “oil painting” like output given an input image. Specifically, the output image should have a unique texture that appears a bit rough and thick to mimic that of a dynamic and impressionistic effect. In my project, I tried to emphasize the effects by focusing on brush size strokes, intensity, and quantization level. 
 
-# How it works
+# How to run code
 1. Save any photo(s) and esure the image file format is .PNG, .JEPG, or BMP
 ![graph](Images/ReadMe/SetUp_1.png)
 2. Press “Upload Image” button
