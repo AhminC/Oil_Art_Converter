@@ -97,3 +97,5 @@ The code below labels for displaying original and altered images, buttons for up
     apply_button = tk.Button(root, text="Apply Oil Painting", command=apply_oil_painting, width=button_width)
     apply_button.pack(pady=10)
 ```
+
+# Implementation Details - Image Processing 
