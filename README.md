@@ -108,7 +108,7 @@ The code below ensures that the brush size used for the median blur operation is
         brush_size += 1
 ```
 
-Apply median blur to the original image to create a smoother version
+Applying a median filter helps to reduce noise in the image by replacing each pixel value with the median value in its neighborhood. This is particularly useful for images with salt-and-pepper noise, as it helps in preserving edge information while smoothing out unwanted variations.
 ```
 median_filtered = cv2.medianBlur(original_image, brush_size)
 ```
@@ -126,7 +126,7 @@ def median_filter(image, kernel_size):
     return result
 ```
 
-Convert the median-filtered image to grayscale
+Converting the image to grayscale simplifies the processing by reducing the image to a single channel representing intensity. This is often beneficial when applying subsequent operations that don't rely on color information, making the algorithm more efficient and avoiding unnecessary complexity.
 ```
 gray_image = cv2.cvtColor(median_filtered, cv2.COLOR_BGR2GRAY)
 ```
@@ -143,4 +143,36 @@ def rgb_to_grayscale(image):
         raise ValueError("Input image should be in RGB format (3 channels).")
 ```
 
-    
+Color quantization is employed to reduce the number of distinct colors in the image. This not only reduces memory requirements but also serves to simplify subsequent analysis.
+```
+    quantized_image = cv2.cvtColor(median_filtered, cv2.COLOR_BGR2RGB)
+    Z = quantized_image.reshape((-1, 3))
+```
+
+The criteria for the k-means clustering algorithm, such as the number of clusters (k), are set to control the granularity of color quantization. The image is then converted back to uint8 format to ensure compatibility with subsequent processing steps. This step essentially defines how many dominant colors or clusters the final image will have.
+```
+def kmeans(X, k, max_iters=100, tol=1e-4):
+    centroids = X[np.random.choice(len(X), k, replace=False)]
+
+    for _ in range(max_iters):
+        labels = np.argmin(np.linalg.norm(X[:, np.newaxis] - centroids, axis=2), axis=1)
+        new_centroids = np.array([X[labels == i].mean(axis=0) for i in range(k)])
+        
+        if np.linalg.norm(new_centroids - centroids) < tol:
+            break
+
+        centroids = new_centroids
+    return labels, centroids
+```
+
+Reconstructing the image after color quantization involves assigning each pixel to its representative color cluster. This step is crucial for visually preserving the structure of the original image while introducing the stylized effect created by the color quantization.
+```
+    quantized_image = centers[labels.flatten()]
+    quantized_image = quantized_image.reshape(original_image.shape)
+```
+
+Applying intensity to the quantized image involves enhancing or modifying the intensity values of the pixels. This step is  included to further emphasize certain features, textures, or contours in the image, enhancing the overall oil-painting-like effect and making the final output visually appealing.
+```
+    intensity_matrix = np.ones(original_image.shape, dtype="uint8") * intensity
+    oil_painting = cv2.add(quantized_image, intensity_matrix)    
+```
