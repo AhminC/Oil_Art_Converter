@@ -107,3 +107,21 @@ The code below ensures that the brush size used for the median blur operation is
     if brush_size % 2 == 0:
         brush_size += 1
 ```
+
+Apply median blur to the original image to create a smoother version
+```
+median_filtered = cv2.medianBlur(original_image, brush_size)
+```
+```
+def median_filter(image, kernel_size):
+    pad_size = kernel_size // 2
+    padded_image = cv2.copyMakeBorder(image, pad_size, pad_size, pad_size, pad_size, cv2.BORDER_REPLICATE)
+    result = np.zeros_like(image)
+
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            window = padded_image[i:i+kernel_size, j:j+kernel_size].flatten()
+            result[i, j] = np.median(window)
+
+    return result
+```
