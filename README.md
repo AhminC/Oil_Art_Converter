@@ -19,7 +19,7 @@ The objective of this project is to derive an “oil painting” like output giv
 ![graph](Images/ReadMe/SetUp_6.png)
 7. If you decide to upload a new file, restart and complete step 2-6
 
-# Implementation Detaisl - GUI
+# Implementation Details - GUI
 The function named get_file_path utilizes a file dialog to prompt the user to select a file and returns the selected file's path. 
 ```
 def get_file_path():
