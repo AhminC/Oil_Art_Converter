@@ -125,3 +125,22 @@ def median_filter(image, kernel_size):
 
     return result
 ```
+
+Convert the median-filtered image to grayscale
+```
+gray_image = cv2.cvtColor(median_filtered, cv2.COLOR_BGR2GRAY)
+```
+```
+def rgb_to_grayscale(image):
+    if len(image.shape) == 3 and image.shape[2] == 3:
+        grayscale_image = 0.299 * image[:, :, 0] + 0.587 * image[:, :, 1] + 0.114 * image[:, :, 2]
+
+        # NOTE: convert to 8 bit
+        grayscale_image = grayscale_image.astype(np.uint8)
+
+        return grayscale_image
+    else:
+        raise ValueError("Input image should be in RGB format (3 channels).")
+```
+
+    
