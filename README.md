@@ -45,3 +45,24 @@ def upload_image():
         altered_image_label.config(image=None)
         altered_image_label.image = None
 ```
+
+The clear_image function resets the display of both original_image_label and altered_image_label in a graphical user interface.
+```
+def clear_image():
+    original_image_label.config(image=None)
+    original_image_label.image = None
+    original_image_label.file_path = None
+
+    altered_image_label.config(image=None)
+    altered_image_label.image = None
+
+```
+
+The code below disables the resizability while setting the window size to 1300 x 600. The goal of creating a restrictive limit was to optimize computational efficiency during image processing, resulting in quicker outputs. 
+```
+    window_width = 1300
+    window_height = 600
+    root.geometry(f"{window_width}x{window_height}")
+    root.resizable(False, False)
+
+```
