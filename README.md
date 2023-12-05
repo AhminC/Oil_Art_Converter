@@ -66,3 +66,34 @@ The code below disables the resizability while setting the window size to 1300 x
     root.resizable(False, False)
 
 ```
+
+The code below labels for displaying original and altered images, buttons for uploading and clearing images, sliders for adjusting brush size, intensity, and quantization levels, and a button for applying an oil painting effect. The layout is organized with appropriate padding to enhance the visual presentation in the root window.
+```
+    original_image_label = tk.Label(root)
+    original_image_label.pack(pady=10)
+
+    altered_image_label = tk.Label(root)
+    altered_image_label.pack(pady=10)
+
+    button_width = 15 
+    upload_button = tk.Button(root, text="Upload Image", command=upload_image, width=button_width)
+    upload_button.pack(pady=10)
+
+    clear_button = tk.Button(root, text="Clear Image", command=clear_image, width=button_width)
+    clear_button.pack(pady=10)
+
+    brush_size_var = tk.IntVar()
+    brush_size_slider = tk.Scale(root, from_=0, to=100, orient="horizontal", variable=brush_size_var, label="Brush Size")
+    brush_size_slider.pack(pady=10)
+
+    intensity_var = tk.IntVar()
+    intensity_slider = tk.Scale(root, from_=0, to=100, orient="horizontal", variable=intensity_var, label="Intensity")
+    intensity_slider.pack(pady=10)
+
+    quantization_levels_var = tk.IntVar()
+    quantization_levels_slider = tk.Scale(root, from_=0, to=100, orient="horizontal", variable=quantization_levels_var, label="Quant Levels")
+    quantization_levels_slider.pack(pady=10)
+
+    apply_button = tk.Button(root, text="Apply Oil Painting", command=apply_oil_painting, width=button_width)
+    apply_button.pack(pady=10)
+```
