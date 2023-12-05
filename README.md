@@ -99,3 +99,11 @@ The code below labels for displaying original and altered images, buttons for up
 ```
 
 # Implementation Details - Image Processing 
+The main function used to preform image processing is function oil_painting_effect(image_path, brush_size, intensity, quantization_levels)
+
+
+The code below ensures that the brush size used for the median blur operation is an odd number. This is important because the median blur operation typically works best with an odd-sized kernel. The median filter operates by taking the median value of the pixel intensities within a neighborhood defined by the kernel size. When the kernel size is odd, there is a well-defined center pixel in the neighborhood. However, when the kernel size is even, there is no exact center, and it might not behave as expected.
+```
+    if brush_size % 2 == 0:
+        brush_size += 1
+```
