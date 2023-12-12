@@ -206,3 +206,5 @@ Example 3: Good looking old man
 ![graph](Images/Output/man1.png)
 ![graph](Images/Output/man2.png)
 
+# Future Work and Reflection
+Given this project being a reflection of what I've learned within Digital Imaging, the most challenging aspect of this project was figuring out the right combinations of preprocessing and artistic techniques. That being said, some changes I would be interested in would be to use a different image segmentation method. While K-Means was great at grouping images, beacuse I was setting a value for it to group based on, I noticed using images with more colors and more complex spacing did not turn out that well. That being said, K-Means was very ussful to implement and use as it is a less complicated technique. But reflecting back, the one thing I think I really understand is the importance of creating grey scaled images. In doing so, I saw how it made using other techniques more efficient. 
