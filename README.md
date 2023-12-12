@@ -176,3 +176,10 @@ Applying intensity to the quantized image involves enhancing or modifying the in
     intensity_matrix = np.ones(original_image.shape, dtype="uint8") * intensity
     oil_painting = cv2.add(quantized_image, intensity_matrix)    
 ```
+
+# Output Images
+![graph](Images/Output/cat1.png)
+![graph](Images/Output/cat2.png)
+![graph](Images/Output/cat3.png)
+![graph](Images/Output/cat4.png)
+![graph](Images/Output/cat5.png)
