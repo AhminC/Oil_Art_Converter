@@ -183,3 +183,9 @@ Applying intensity to the quantized image involves enhancing or modifying the in
 ![graph](Images/Output/cat3.png)
 ![graph](Images/Output/cat4.png)
 ![graph](Images/Output/cat5.png)
+
+![graph](Images/Output/seattle1.png)
+![graph](Images/Output/seattle2.png)
+![graph](Images/Output/seattle3.png)
+![graph](Images/Output/seattle4.png)
+![graph](Images/Output/seattle5.png)
