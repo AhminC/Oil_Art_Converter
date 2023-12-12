@@ -178,14 +178,31 @@ Applying intensity to the quantized image involves enhancing or modifying the in
 ```
 
 # Output Images
+The function responsable producing the output image was oil_painting_effect(image_path, brush_size, intensity, quantization_levels). The function took in three parameters as follows:
+1) brush_size:
+   The brush size is used to apply a median blur to the original image. A larger brush size will result in a stronger smoothing effect, as it considers a larger neighborhood when computing the median. A smaller brush size will produce a less smooth effect.
+
+2) intensity:
+   The intensity parameter is used to control the intensity of the oil painting effect. It is added to the quantized image, effectively increasing the intensity of colors. Higher values of intensity will result in a more pronounced oil painting effect, making the colors more vivid and pronounced.
+
+3) quantization_levels:
+   The image is quantized using k-means clustering with the specified number of quantization_levels. This parameter determines the number of colors that will be used in the output image. ncreasing the quantization_levels will result in a more detailed image with a wider range of colors. However, setting it too high may result in an overly detailed or noisy image.
+
+Example 1: Silly Cat
 ![graph](Images/Output/cat1.png)
 ![graph](Images/Output/cat2.png)
 ![graph](Images/Output/cat3.png)
 ![graph](Images/Output/cat4.png)
 ![graph](Images/Output/cat5.png)
 
+Example 2: Seattle
 ![graph](Images/Output/seattle1.png)
 ![graph](Images/Output/seattle2.png)
 ![graph](Images/Output/seattle3.png)
 ![graph](Images/Output/seattle4.png)
 ![graph](Images/Output/seattle5.png)
+
+Example 3: Good looking old man
+![graph](Images/Output/man1.png)
+![graph](Images/Output/man2.png)
+
